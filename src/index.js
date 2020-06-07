@@ -1,7 +1,8 @@
 import React from 'react'
 import ReactDom from 'react-dom'
+import { App } from './App'
 
 ReactDom.render(
-  <h1> Hola Kevin Como estas, preparado para react con midudev !!! </h1>,
+  <App />,
   document.getElementById('app')
 )
