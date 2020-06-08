@@ -3,7 +3,8 @@ import { fadeIn } from '../../styles/animation'
 
 export const ArticleWrapper = styled.article`
 position:relative;
-margin-bottom:35px
+margin-bottom:35px;
+min-height:250px; /* Esto por que el intersection observe en el primer renderizado los detecta dentro del viewport ya que al no tener altura estan todos juntos, al ponerle una altura minima empujamos el viewport de manera que logremos el efecto esperado*/
 `
 
 export const ImgWrapper = styled.div`
