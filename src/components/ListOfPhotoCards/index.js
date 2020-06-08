@@ -1,14 +1,9 @@
-import React, { useState, useEffect } from 'react'
+import React from 'react'
 import { PhotoCard } from '../PhotoCard'
+import { useFetchData } from '../../components/hooks/useFetchData'
 
 export const ListOfPhotoCards = () => {
-  const [photos, setPhotos] = useState([])
-
-  useEffect(() => {
-    window.fetch('https://petgrambackend.now.sh/photos')
-      .then(resp => resp.json())
-      .then(response => setPhotos(response))
-  }, [])
+  const [photos] = useFetchData('https://petgrambackend.now.sh/photos')
 
   return (
     <ul>

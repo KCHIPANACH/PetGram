@@ -1,44 +1,16 @@
-import React, { useState, useEffect } from 'react'
-import Skeleton, { SkeletonTheme } from 'react-loading-skeleton'
+import React from 'react'
+import Skeleton from 'react-loading-skeleton'
 import { Category } from '../Category'
 import { List, Item, WrapperDiv } from './styles'
+import { useFetchData } from '../../components/hooks/useFetchData'
+import { useOnScroll } from '../hooks/useOnScroll'
 
 /* Base de datos temporal hasta hacer el fetching con la api Graph */
 /* import { categories } from '../Prueba/db.json' */
 
-function useCategoriesData () {
-  const [categories, setCategories] = useState([])
-  const [loading, setLoading] = useState(false)
-
-  useEffect(() => {
-    setLoading(true)
-    window.fetch('https://petgrambackend.now.sh/categories')
-      .then(resp => resp.json())
-      .then(response => {
-        setLoading(false)
-        setCategories(response)
-      })
-  }, [])
-
-  return { categories, loading }
-}
-
 export const ListOfCategories = () => {
-  const { categories, loading } = useCategoriesData()
-  const [showFixed, setShowFixed] = useState(false)
-
-  useEffect(function () {
-    const onScroll = e => {
-      const nowShowFixed = window.scrollY > 200
-      showFixed !== nowShowFixed && setShowFixed(nowShowFixed)
-    }
-    document.addEventListener('scroll', onScroll)
-
-    /* Limpiar eventos
-    useEffect devuelve una función la cual podemos usar para limpiar los eventos
-    */
-    return () => document.removeEventListener('scroll', onScroll)
-  }, [showFixed])
+  const [categories, loading] = useFetchData('https://petgrambackend.now.sh/categories')
+  const [showFixed] = useOnScroll(200)
 
   const renderList = (fixed) => (
     <List fixed={fixed}>
