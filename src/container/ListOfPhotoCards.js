@@ -8,3 +8,9 @@ export const ListOfPhotoCards = withPhotos(ListOfPhotoCardsComponent)
     V: Carpeta COMPONENTS, que se encarga de mostrar nuestros componentes presentacionales
     C: Carpeta CONTAINER, que se encarga de comunicarse con HOC y COMPONENTS. Envuelve nuestro componente presentacional con los datos requeridos y se comunica con HOC para solicitar los datos que estos ya tienen.
 */
+
+/*
+PATRON HOC
+Componentes de orden superior(HOC): Son aquellas funciones que se le pasa como parametro un componente y devuelve otro componente ya sea con mejoras o props inyectadas
+ HOC, recupera los datos de la API, luego envuelve un componente para inyectarle esos datos y finalmente pasarselos por props
+*/

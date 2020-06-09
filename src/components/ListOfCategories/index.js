@@ -2,8 +2,8 @@ import React from 'react'
 import Skeleton from 'react-loading-skeleton'
 import { Category } from '../Category'
 import { List, Item, WrapperDiv } from './styles'
-import { useFetchData } from '../../components/hooks/useFetchData'
-import { useOnScroll } from '../hooks/useOnScroll'
+import { useFetchData } from '../../hooks/useFetchData'
+import { useOnScroll } from '../../hooks/useOnScroll'
 
 /* Base de datos temporal hasta hacer el fetching con la api Graph */
 /* import { categories } from '../Prueba/db.json' */
