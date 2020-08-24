@@ -16,7 +16,7 @@ export const ListOfCategories = () => {
     <List fixed={fixed}>
       {
         loading ? [1, 2, 3, 4, 5].map((item, key) => <WrapperDiv key={key}><Skeleton width={90} height={90} circle />  <Skeleton width={25} height={25} circle /> </WrapperDiv>)
-          : categories.map((category, key) => <Item key={key}> <Category {...category} /> </Item>)
+          : categories.map((category, key) => <Item key={key}> <Category {...category} path={`/pet/${category.id}`} /> </Item>)
       }
     </List>
   )

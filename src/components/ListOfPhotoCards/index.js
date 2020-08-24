@@ -6,7 +6,6 @@ import { WrapperSkeleton } from './styles'
 /* Componentes de orden superior(HOC): Son aquellas funciones que se le pasa como parametro un componente y devuelve otro componente ya sea con mejoras o props inyectadas  */
 
 export const ListOfPhotoCardsComponent = ({ data: { photos = [], loading } } = {}) => {
-  console.log(loading)
   return (
     <ul>
       {
@@ -16,3 +15,4 @@ export const ListOfPhotoCardsComponent = ({ data: { photos = [], loading } } = {
     </ul>
   )
 }
+ 
