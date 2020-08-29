@@ -19,6 +19,8 @@ module.exports = {
       background_color:"#000",
       theme_color:"#b1a",
       display:"standalone",
+      start_url: '/',
+      scope: '/',
       orientation:"portrait",
       icons:[
         {src: path.resolve(__dirname, 'src/assets/pets.png'),
