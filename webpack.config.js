@@ -66,7 +66,9 @@ module.exports = {
         use: [
           {
             loader: 'file-loader',
-            publicPath: '/',
+            options: { 
+              publicPath: '/',
+            },
           },
         ],
       },
