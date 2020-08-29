@@ -5,45 +5,40 @@ const path = require("path")
 
 module.exports = {
   output: {
-    path: path.resolve(__dirname, 'dist'),
     filename: 'app.bundle.js',
-    publicPath:'/'
+    publicPath: '/'
   },
   plugins: [
     new HtmlWebpackPlugin({
       template: 'src/index.html'
     }),
     new WebpackPwaManifestPlugin({
-      name:"Petgram - Tu app de fotos de Mascotas",
-      shortname:"Petgram 🐶 ",
-      description:"Con petgram puedes encontrar fotos de animales domésticos muy fácilmente",
-      background_color:"#000",
-      theme_color:"#b1a",
-      display:"standalone",
-      start_url: '/',
-      scope: '/',
-      orientation:"portrait",
-      icons:[
-        {src: path.resolve(__dirname, 'src/assets/pets.png'),
-         sizes:[96,128,192,256,384,512],
-         ios:true,
+      name: 'Petgram - Tu app de fotos de mascotas',
+      shortname: 'Petgram 🐶',
+      description: 'Con Petgram puedes encontrar fotos de animales domésticos muy fácilmente',
+      background_color: '#fff',
+      theme_color: '#b1a',
+      icons: [
+        {
+          src: path.resolve('src/assets/pets.png'),
+          sizes: [96, 128, 192, 256, 384, 512]
         }
       ]
     }),
     new WorkboxWebpackPlugin.GenerateSW({
-      runtimeCaching:[
+      runtimeCaching: [
         {
           urlPattern: new RegExp('https://(res.cloudinary.com|images.unsplash.com)'),
-          handler:'CacheFirst',
-          options:{
-            cacheName:'images'
+          handler: 'CacheFirst',
+          options: {
+            cacheName: 'images'
           }
         },
         {
-          urlPattern: new RegExp('https://pet-gram.now.sh'),
-          handler:'NetworkFirst',
-          options:{
-            cacheName:'api'
+          urlPattern: new RegExp('https://pet-gram.kchipanach.now.sh'),
+          handler: 'NetworkFirst',
+          options: {
+            cacheName: 'api'
           }
         }
       ]
