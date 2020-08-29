@@ -5,6 +5,7 @@ const path = require("path")
 
 module.exports = {
   output: {
+    path: path.resolve(__dirname, 'dist'),
     filename: 'app.bundle.js',
     publicPath:'/'
   },
@@ -64,7 +65,8 @@ module.exports = {
         test: /\.(png|jpe?g|gif)$/i,
         use: [
           {
-            loader: 'file-loader'
+            loader: 'file-loader',
+            publicPath: '/',
           },
         ],
       },
