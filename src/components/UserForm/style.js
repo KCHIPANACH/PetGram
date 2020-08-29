@@ -25,10 +25,14 @@ outline:none;
      opacity:.3;
  }
 `
-export const Img = styled.img`
+export const ContenedorSVG = styled.div`
     max-width: 200px;
     margin: 0 auto;
     display: block;
+    svg{
+        width:200px;
+        height:200px;
+    }
 `
 
 export const Contenedor = styled.div`
