@@ -8,7 +8,7 @@ import { useOnScroll } from '../../hooks/useOnScroll'
 /* Base de datos temporal hasta hacer el fetching con la api Graph */
 /* import { categories } from '../Prueba/db.json' */
 
-export const ListOfCategories = () => {
+const ListOfCategoriesComponents = () => {
   const [categories, loading] = useFetchData('https://petgrambackend.now.sh/categories')
   const [showFixed] = useOnScroll(200)
 
@@ -28,3 +28,5 @@ export const ListOfCategories = () => {
     </>
   )
 }
+
+export const ListOfCategories = React.memo(ListOfCategoriesComponents)

@@ -1,7 +1,7 @@
 import React from 'react'
 import { PhotoCardWithQUery } from '../container/PhotoCardWithQuery'
 
-export const Detail = ({detailId})=>{
+export default ({detailId})=>{
     return(
         <>
         <PhotoCardWithQUery id={detailId} />
